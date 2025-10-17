@@ -204,11 +204,15 @@ export default function VapeCanShowcase() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center relative overflow-hidden">
+        {/* Loading background gradients */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,transparent_70%)]"></div>
+        
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full"
+          className="w-16 h-16 border-4 border-white/20 border-t-white rounded-full relative z-10"
         />
       </div>
     )
@@ -216,8 +220,12 @@ export default function VapeCanShowcase() {
 
   if (error && products.length === 0) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-center">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center relative overflow-hidden">
+        {/* Error background gradients */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/10 to-transparent animate-pulse"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.1)_0%,transparent_70%)]"></div>
+        
+        <div className="text-center relative z-10">
           <h2 className="text-2xl font-bold text-white mb-4">Unable to load products</h2>
           <p className="text-gray-400">{error}</p>
         </div>
@@ -226,7 +234,7 @@ export default function VapeCanShowcase() {
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Product Showcase Sections */}
       {products.map((product, index) => (
         <section 
@@ -234,34 +242,76 @@ export default function VapeCanShowcase() {
           className="h-screen w-full flex items-center justify-center relative overflow-hidden"
           style={{
             background: `linear-gradient(135deg, 
-              ${product.background_color}20 0%, 
-              ${product.background_color}40 50%, 
-              ${product.background_color}10 100%)`
+              ${product.background_color}15 0%, 
+              ${product.background_color}35 25%, 
+              ${product.background_color}50 50%, 
+              ${product.background_color}35 75%, 
+              ${product.background_color}15 100%),
+              radial-gradient(ellipse at top, ${product.background_color}20 0%, transparent 50%),
+              radial-gradient(ellipse at bottom, ${product.background_color}10 0%, transparent 50%)`
           }}
         >
-          {/* Background Elements */}
+          {/* Enhanced Background Elements */}
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.1)_1px,transparent_0)] bg-[length:20px_20px] opacity-20"></div>
+            {/* Animated gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
+            {/* Dot pattern */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px] opacity-30"></div>
+            {/* Mesh gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/3 to-transparent"></div>
           </div>
 
-          {/* Floating Particles */}
+          {/* Enhanced Floating Particles */}
           <div className="absolute inset-0">
-            {[...Array(15)].map((_, i) => (
+            {[...Array(20)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-1 h-1 bg-white/30 rounded-full"
+                className="absolute rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
+                  width: `${1 + Math.random() * 3}px`,
+                  height: `${1 + Math.random() * 3}px`,
+                  background: `radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 50%, transparent 100%)`,
                 }}
                 animate={{
-                  y: [0, -20, 0],
-                  opacity: [0.3, 0.8, 0.3],
+                  y: [0, -30, 0],
+                  x: [0, Math.random() * 20 - 10, 0],
+                  opacity: [0.2, 0.8, 0.2],
+                  scale: [0.8, 1.2, 0.8],
                 }}
                 transition={{
-                  duration: 2 + Math.random() * 2,
+                  duration: 3 + Math.random() * 2,
                   repeat: Infinity,
-                  delay: Math.random() * 2,
+                  delay: Math.random() * 3,
+                  ease: "easeInOut",
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Gradient Orbs */}
+          <div className="absolute inset-0">
+            {[...Array(3)].map((_, i) => (
+              <motion.div
+                key={`orb-${i}`}
+                className="absolute rounded-full blur-xl"
+                style={{
+                  left: `${20 + i * 30}%`,
+                  top: `${20 + i * 20}%`,
+                  width: `${200 + i * 100}px`,
+                  height: `${200 + i * 100}px`,
+                  background: `radial-gradient(circle, ${product.background_color}20 0%, ${product.background_color}10 50%, transparent 100%)`,
+                }}
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 4 + i,
+                  repeat: Infinity,
+                  delay: i * 1.5,
+                  ease: "easeInOut",
                 }}
               />
             ))}
