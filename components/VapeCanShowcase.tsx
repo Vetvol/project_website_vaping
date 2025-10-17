@@ -332,30 +332,53 @@ export default function VapeCanShowcase() {
             ))}
           </div>
 
+          {/* Page Number Indicator */}
+          <div className="absolute top-8 left-8 text-white/50 text-sm font-mono z-20">
+            {String(index + 1).padStart(2, '0')} / {String(products.length).padStart(2, '0')}
+          </div>
+
           {/* Product Content */}
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20">
-              
-              {/* Mobile/Tablet Layout */}
-              <div className="w-full lg:hidden">
-                {/* Mobile Description Box */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg mb-6 sm:mb-8"
-                >
-                  <div className="flex items-center gap-4 sm:gap-6">
+          <div className="flex items-center justify-center w-full max-w-6xl mx-auto px-8 h-full">
+            {/* Left Side - Vape Can */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative z-10 w-1/2 flex justify-center"
+            >
+              <VapeCan 
+                flavor={product.flavor}
+                ingredients={product.ingredients}
+                description={product.description}
+                index={index}
+                totalProducts={products.length}
+                imageUrl={product.image_url}
+              />
+            </motion.div>
+
+            {/* Right Side - Product Info */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="ml-16 text-white max-w-md w-1/2"
+            >
+              {/* Mobile/Tablet Description Box */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="lg:hidden mb-6"
+              >
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 shadow-lg">
+                  <div className="flex items-center gap-4">
                     {/* Left Side - Page Number and Image */}
                     <div className="flex flex-col items-center">
-                      {/* Page Number */}
-                      <div className="text-white/80 text-sm sm:text-base font-semibold mb-2 sm:mb-3">
-                        {String(index + 1).padStart(2, '0')} / {String(products.length).padStart(2, '0')}
-                      </div>
-                      
                       {/* Product Image */}
-                      <div className="w-16 h-20 sm:w-20 sm:h-24 md:w-24 md:h-28 rounded-lg overflow-hidden shadow-lg">
+                      <div className="w-16 h-20 rounded-lg overflow-hidden shadow-lg">
                         {product.image_url ? (
                           <Image
                             src={product.image_url}
@@ -375,24 +398,24 @@ export default function VapeCanShowcase() {
                     {/* Right Side - Content */}
                     <div className="flex-1">
                       {/* Product Specs */}
-                      <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 mb-3 sm:mb-4 shadow-lg inline-block">
-                        <div className="text-xs sm:text-sm font-semibold text-white">
+                      <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 mb-3 shadow-lg inline-block">
+                        <div className="text-xs font-semibold text-white">
                           10ml / 20mg/ml
                         </div>
                       </div>
 
                       {/* Product Title */}
-                      <h2 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 sm:mb-3 leading-tight">
+                      <h2 className="text-base font-bold text-white mb-2 leading-tight">
                         {product.flavor}
                       </h2>
 
                       {/* Product Description */}
-                      <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed mb-3 sm:mb-4">
+                      <p className="text-xs text-gray-300 leading-relaxed mb-3">
                         {product.description}
                       </p>
                       
                       {/* Flavor Tags */}
-                      <div className="flex flex-wrap gap-1 sm:gap-2">
+                      <div className="flex flex-wrap gap-1">
                         {product.ingredients.map((ingredient, idx) => (
                           <motion.span
                             key={idx}
@@ -400,7 +423,7 @@ export default function VapeCanShowcase() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-2 py-1 sm:px-3 sm:py-1.5 text-sm sm:text-base shadow-lg"
+                            className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-2 py-1 text-sm shadow-lg"
                           >
                             {ingredient}
                           </motion.span>
@@ -408,96 +431,65 @@ export default function VapeCanShowcase() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
+              </motion.div>
 
-                {/* Mobile Vape Can */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="flex justify-center"
-                >
-                  <VapeCan 
-                    flavor={product.flavor}
-                    ingredients={product.ingredients}
-                    description={product.description}
-                    index={index}
-                    totalProducts={products.length}
-                    imageUrl={product.image_url}
-                  />
-                </motion.div>
-              </div>
+              {/* Desktop Product Info */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="hidden lg:block"
+              >
+                {/* Product Title */}
+                <h1 className="text-5xl font-bold mb-4 gradient-text">
+                  {product.flavor}
+                </h1>
 
-              {/* Desktop Layout */}
-              <div className="hidden lg:flex w-full items-center justify-between gap-16 xl:gap-20">
-                {/* Left Side - Vape Can */}
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="flex-1 flex justify-center"
-                >
-                  <VapeCan 
-                    flavor={product.flavor}
-                    ingredients={product.ingredients}
-                    description={product.description}
-                    index={index}
-                    totalProducts={products.length}
-                    imageUrl={product.image_url}
-                  />
-                </motion.div>
+                {/* Product Description */}
+                <p className="text-xl text-white/80 mb-6 leading-relaxed">
+                  {product.description}
+                </p>
+                
+                {/* Flavor Tags */}
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {product.ingredients.map((ingredient, idx) => (
+                    <motion.span
+                      key={idx}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
+                      viewport={{ once: true }}
+                      className="px-3 py-1 bg-white/20 rounded-full text-sm font-medium"
+                    >
+                      {ingredient}
+                    </motion.span>
+                  ))}
+                </div>
 
-                {/* Right Side - Product Info */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="flex-1 text-white max-w-md"
-                >
-                  {/* Page Number */}
-                  <div className="text-white/80 text-lg font-semibold mb-6">
-                    {String(index + 1).padStart(2, '0')} / {String(products.length).padStart(2, '0')}
+                {/* Product Specs */}
+                <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl px-6 py-4 shadow-lg">
+                  <div className="text-xl font-semibold text-white text-center">
+                    10ml / 20mg/ml
                   </div>
-
-                  {/* Product Title */}
-                  <h2 className="text-3xl xl:text-4xl font-bold gradient-text mb-6">
-                    {product.flavor}
-                  </h2>
-
-                  {/* Product Description */}
-                  <p className="text-lg xl:text-xl text-gray-300 mb-8 leading-relaxed">
-                    {product.description}
-                  </p>
-                  
-                  {/* Flavor Tags */}
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    {product.ingredients.map((ingredient, idx) => (
-                      <motion.span
-                        key={idx}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
-                        viewport={{ once: true }}
-                        className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-6 py-3 text-2xl xl:text-3xl shadow-lg"
-                      >
-                        {ingredient}
-                      </motion.span>
-                    ))}
-                  </div>
-
-                  {/* Product Specs */}
-                  <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl px-6 py-4 shadow-lg">
-                    <div className="text-xl xl:text-2xl font-semibold text-white text-center">
-                      10ml / 20mg/ml
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            viewport={{ once: true }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+          >
+            <div className="text-white/60 text-sm">
+              Scroll to discover
+            </div>
+          </motion.div>
         </section>
       ))}
     </div>
