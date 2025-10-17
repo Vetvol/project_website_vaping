@@ -1,0 +1,2 @@
+# Exclude admin panel from main website deployment
+admin-panel/
