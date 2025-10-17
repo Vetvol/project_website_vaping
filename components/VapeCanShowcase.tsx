@@ -251,15 +251,17 @@ export default function VapeCanShowcase() {
               radial-gradient(ellipse at bottom, ${product.background_color}10 0%, transparent 50%)`
           }}
         >
-          {/* Gradient Transition to Next Product */}
+          {/* Enhanced Gradient Transition to Next Product */}
           {index < products.length - 1 && (
             <div 
-              className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 md:h-24 lg:h-32 z-30"
+              className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 md:h-40 lg:h-48 xl:h-56 z-30"
               style={{
                 background: `linear-gradient(to bottom, 
                   transparent 0%, 
-                  ${products[index + 1].background_color}20 50%, 
-                  ${products[index + 1].background_color}40 100%)`
+                  ${products[index + 1].background_color}15 25%, 
+                  ${products[index + 1].background_color}30 50%, 
+                  ${products[index + 1].background_color}45 75%, 
+                  ${products[index + 1].background_color}60 100%)`
               }}
             />
           )}

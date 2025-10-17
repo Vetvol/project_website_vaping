@@ -126,10 +126,10 @@ export default function VapeCan({ flavor, ingredients, description, index, total
           className="relative z-10"
         >
           {/* Can Container */}
-          <div className="relative">
+          <div className="relative w-32 h-80 sm:w-36 sm:h-90 md:w-40 md:h-100 lg:w-44 lg:h-110 xl:w-48 xl:h-120 ml-8 sm:ml-10 md:ml-12 lg:ml-14 xl:ml-16">
             {/* Can Body */}
             {imageUrl && !imageError ? (
-              <div className="w-32 h-80 sm:w-36 sm:h-90 md:w-40 md:h-100 lg:w-44 lg:h-110 xl:w-48 xl:h-120 rounded-2xl shadow-2xl relative overflow-hidden">
+              <div className="absolute inset-0 rounded-2xl shadow-2xl overflow-hidden">
                 <Image
                   src={imageUrl}
                   alt={`${flavor} Vape Can`}
@@ -140,7 +140,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
                 />
               </div>
             ) : (
-              <div className="w-32 h-80 sm:w-36 sm:h-90 md:w-40 md:h-100 lg:w-44 lg:h-110 xl:w-48 xl:h-120 bg-gradient-to-b from-slate-300 via-slate-200 to-slate-300 rounded-2xl shadow-2xl relative overflow-hidden border border-slate-400/20">
+              <div className="absolute inset-0 bg-gradient-to-b from-slate-300 via-slate-200 to-slate-300 rounded-2xl shadow-2xl overflow-hidden border border-slate-400/20">
               {/* Can Top */}
               <div className="absolute top-0 left-0 right-0 h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 bg-gradient-to-b from-slate-400 via-slate-300 to-slate-200 rounded-t-2xl border-b border-slate-400/30">
                 <div className="absolute top-2 sm:top-2.5 md:top-3 lg:top-3.5 xl:top-4 left-1/2 transform -translate-x-1/2 w-6 h-4 sm:w-7 sm:h-5 md:w-8 md:h-6 lg:w-9 lg:h-7 xl:w-10 xl:h-8 bg-gradient-to-b from-slate-500 to-slate-400 rounded-sm shadow-inner"></div>
