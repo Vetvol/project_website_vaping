@@ -75,12 +75,13 @@ CREATE TABLE order_items (
 
 -- Insert LUNIQ VAPE products
 INSERT INTO products (flavor, description, ingredients, background_color, is_active, image_url) VALUES
-('Kiwi-Guava', 'A tropical explosion of sweet kiwi and exotic guava, perfectly balanced with a refreshing citrus twist.', '["🥝", "🍈", "🍋"]', '#3b82f6', true, 'https://raw.githubusercontent.com/Vetvol/project_website_vaping/main/images/kivi_image.png'),
-('Mango Tango', 'Juicy mango meets zesty orange with a hint of spice for an unforgettable tropical experience.', '["🥭", "🍊", "🌶️"]', '#f59e0b', true, NULL),
-('Berry Blast', 'A medley of fresh berries bursting with natural sweetness and antioxidant goodness.', '["🫐", "🍓", "🍒"]', '#8b5cf6', true, NULL),
-('Citrus Splash', 'Refreshing citrus blend with grape undertones for a crisp, energizing vape experience.', '["🍊", "🍋", "🍇"]', '#10b981', true, NULL),
-('Tropical Paradise', 'Escape to paradise with this exotic blend of pineapple, coconut, and banana.', '["🍍", "🥥", "🍌"]', '#f97316', true, NULL),
-('Apple Cinnamon', 'Warm apple pie meets aromatic cinnamon for a cozy, comforting flavor profile.', '["🍎", "🍯", "🌿"]', '#dc2626', true, NULL);
+('Kiwi Guava Passionfruit', 'A tropical explosion of sweet kiwi, exotic guava, and tangy passionfruit for the ultimate fruity experience.', '["🥝", "🍈", "🥭"]', '#3b82f6', true, 'https://raw.githubusercontent.com/Vetvol/project_website_vaping/main/images/Kivi_guava_passionfruit.png'),
+('Dragonfruit Strawberry Ice', 'Cool dragonfruit meets sweet strawberry with an icy finish for a refreshing vape sensation.', '["🐉", "🍓", "❄️"]', '#e91e63', true, 'https://raw.githubusercontent.com/Vetvol/project_website_vaping/main/images/Dragonfruit_strawberry_ice.jpg'),
+('Grape Passionfruit', 'Rich grape flavor combined with tropical passionfruit for a bold and exotic taste experience.', '["🍇", "🥭", "💜"]', '#9c27b0', true, 'https://raw.githubusercontent.com/Vetvol/project_website_vaping/main/images/Grape_passionfruit.jpg'),
+('Melon Lychee', 'Sweet melon meets delicate lychee for a refreshing and sophisticated flavor profile.', '["🍈", "🌰", "💚"]', '#4caf50', true, 'https://raw.githubusercontent.com/Vetvol/project_website_vaping/main/images/Melon_lychee.jpg'),
+('Mint Ice', 'Cool mint with an icy finish for a crisp, refreshing vape experience that awakens your senses.', '["🌿", "❄️", "💙"]', '#00bcd4', true, 'https://raw.githubusercontent.com/Vetvol/project_website_vaping/main/images/Mint_ice.jpg'),
+('Papaya Aloe', 'Tropical papaya meets soothing aloe for a smooth, refreshing vape with exotic undertones.', '["🥭", "🌿", "🧡"]', '#ff9800', true, 'https://raw.githubusercontent.com/Vetvol/project_website_vaping/main/images/Papaya_aloe.jpg'),
+('Raspberry Mojito Ice', 'Fresh raspberry meets mint with an icy twist, inspired by the classic mojito cocktail.', '["🍓", "🌿", "❄️"]', '#f44336', true, 'https://raw.githubusercontent.com/Vetvol/project_website_vaping/main/images/Raspberry_mojito_ice.jpg');
 
 -- Insert admin user (password: admin123 - change this!)
 INSERT INTO users (email, password_hash, role) VALUES
