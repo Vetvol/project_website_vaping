@@ -240,18 +240,22 @@ export default function VapeCanShowcase() {
       {products.map((product, index) => (
         <section 
           key={product.id}
-          className="min-h-screen w-full flex items-center justify-center relative overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20"
-          style={{
-            background: `linear-gradient(135deg, 
-              ${product.background_color}15 0%, 
-              ${product.background_color}35 25%, 
-              ${product.background_color}50 50%, 
-              ${product.background_color}35 75%, 
-              ${product.background_color}15 100%),
-              radial-gradient(ellipse at top, ${product.background_color}20 0%, transparent 50%),
-              radial-gradient(ellipse at bottom, ${product.background_color}10 0%, transparent 50%)`
-          }}
+          className="min-h-screen lg:h-screen w-full flex items-center justify-center relative overflow-hidden"
         >
+          {/* Full Screen Gradient Background */}
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(135deg, 
+                ${product.background_color}15 0%, 
+                ${product.background_color}35 25%, 
+                ${product.background_color}50 50%, 
+                ${product.background_color}35 75%, 
+                ${product.background_color}15 100%),
+                radial-gradient(ellipse at top, ${product.background_color}20 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, ${product.background_color}10 0%, transparent 50%)`
+            }}
+          />
           {/* Enhanced Gradient Transition to Next Product */}
           {index < products.length - 1 && (
             <div 
@@ -338,7 +342,7 @@ export default function VapeCanShowcase() {
           </div>
 
           {/* Product Content */}
-          <div className="flex flex-col sm:flex-row lg:flex-row items-center justify-center w-full max-w-6xl lg:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-0 lg:h-screen gap-4 sm:gap-6 lg:gap-8">
+          <div className="flex flex-col sm:flex-row lg:flex-row items-center justify-center w-full max-w-6xl lg:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-0 lg:h-screen gap-4 sm:gap-6 lg:gap-8 relative z-10">
             {/* Photo Box - 1/3 ratio */}
             <div className="w-full sm:w-1/3 lg:w-1/2 flex items-center justify-center order-2 sm:order-1 lg:order-1">
               <motion.div
