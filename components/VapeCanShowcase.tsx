@@ -239,7 +239,7 @@ export default function VapeCanShowcase() {
       {products.map((product, index) => (
         <section 
           key={product.id}
-          className="h-screen w-full flex items-center justify-center relative overflow-hidden"
+          className="min-h-screen w-full flex items-center justify-center relative overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20"
           style={{
             background: `linear-gradient(135deg, 
               ${product.background_color}15 0%, 
@@ -251,6 +251,18 @@ export default function VapeCanShowcase() {
               radial-gradient(ellipse at bottom, ${product.background_color}10 0%, transparent 50%)`
           }}
         >
+          {/* Gradient Transition to Next Product */}
+          {index < products.length - 1 && (
+            <div 
+              className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 md:h-24 lg:h-32 z-30"
+              style={{
+                background: `linear-gradient(to bottom, 
+                  transparent 0%, 
+                  ${products[index + 1].background_color}20 50%, 
+                  ${products[index + 1].background_color}40 100%)`
+              }}
+            />
+          )}
           {/* Enhanced Background Elements */}
           <div className="absolute inset-0">
             {/* Animated gradient overlay */}
@@ -318,15 +330,15 @@ export default function VapeCanShowcase() {
           </div>
 
           {/* Product Content */}
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-1 sm:gap-2 md:gap-4 lg:gap-6 xl:gap-8">
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20">
               {/* Product Info */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="flex-1 text-center lg:text-left order-1 lg:order-1"
+                className="w-full lg:w-1/2 text-center lg:text-left order-2 lg:order-1"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -335,15 +347,15 @@ export default function VapeCanShowcase() {
                   viewport={{ once: true }}
                   className="hidden lg:block"
                 >
-                  <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold gradient-text mb-0.5 sm:mb-1 md:mb-2 lg:mb-4">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold gradient-text mb-4 sm:mb-6 md:mb-8">
                     {product.flavor}
                   </h2>
-                  <p className="text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg text-gray-300 mb-0.5 sm:mb-1 md:mb-2 lg:mb-4 max-w-2xl mx-auto lg:mx-0">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                     {product.description}
                   </p>
                   
                   {/* Flavor Tags */}
-                  <div className="flex flex-wrap gap-0.5 sm:gap-1 md:gap-2 lg:gap-3 justify-center lg:justify-start mb-0.5 sm:mb-1 md:mb-2 lg:mb-4">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 lg:gap-5 justify-center lg:justify-start mb-6 sm:mb-8 md:mb-10">
                     {product.ingredients.map((ingredient, idx) => (
                       <motion.span
                         key={idx}
@@ -351,7 +363,7 @@ export default function VapeCanShowcase() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-0.5 py-0 sm:px-1 sm:py-0.5 md:px-2 md:py-1 lg:px-3 lg:py-1 xl:px-4 xl:py-2 text-[10px] sm:text-xs md:text-sm lg:text-lg"
+                        className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-7 lg:py-3.5 xl:px-8 xl:py-4 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl shadow-lg"
                       >
                         {ingredient}
                       </motion.span>
@@ -366,7 +378,7 @@ export default function VapeCanShowcase() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="flex-1 flex justify-center order-2 lg:order-2 relative"
+                className="w-full lg:w-1/2 flex justify-center order-1 lg:order-2 relative"
               >
                 {/* Product Specifications - Right Side */}
                 <motion.div
@@ -374,10 +386,10 @@ export default function VapeCanShowcase() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                   viewport={{ once: true }}
-                  className="absolute top-4 right-4 lg:top-8 lg:right-8 z-20"
+                  className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 lg:top-10 lg:right-10 xl:top-12 xl:right-12 z-20"
                 >
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-2 lg:px-4 lg:py-3">
-                    <div className="text-xs sm:text-sm lg:text-base font-semibold text-white text-center">
+                  <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl px-4 py-3 sm:px-5 sm:py-3.5 md:px-6 md:py-4 lg:px-7 lg:py-4.5 xl:px-8 xl:py-5 shadow-lg">
+                    <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-white text-center">
                       10ml / 20mg/ml
                     </div>
                   </div>
