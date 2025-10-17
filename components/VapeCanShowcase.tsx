@@ -274,19 +274,6 @@ export default function VapeCanShowcase() {
                       </motion.span>
                     ))}
                   </div>
-
-                  {/* Product Specs - Minimal */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    viewport={{ once: true }}
-                    className="text-center"
-                  >
-                    <div className="text-[8px] sm:text-xs md:text-sm lg:text-base text-gray-300">
-                      10ml / 20mg/ml
-                    </div>
-                  </motion.div>
                 </motion.div>
               </motion.div>
 
@@ -296,8 +283,23 @@ export default function VapeCanShowcase() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="flex-1 flex justify-center order-2 lg:order-2"
+                className="flex-1 flex justify-center order-2 lg:order-2 relative"
               >
+                {/* Product Specifications - Right Side */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  viewport={{ once: true }}
+                  className="absolute top-4 right-4 lg:top-8 lg:right-8 z-20"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-3 py-2 lg:px-4 lg:py-3">
+                    <div className="text-xs sm:text-sm lg:text-base font-semibold text-white text-center">
+                      10ml / 20mg/ml
+                    </div>
+                  </div>
+                </motion.div>
+
                 <VapeCan 
                   flavor={product.flavor}
                   ingredients={product.ingredients}
