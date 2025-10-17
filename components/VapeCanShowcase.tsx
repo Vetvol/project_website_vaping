@@ -152,6 +152,9 @@ export default function VapeCanShowcase() {
                 <VapeCan 
                   flavor={product.flavor}
                   ingredients={product.ingredients}
+                  description={product.description}
+                  index={index}
+                  totalProducts={products.length}
                 />
               </motion.div>
             </div>
