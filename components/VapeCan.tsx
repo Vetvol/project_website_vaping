@@ -134,7 +134,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
                   src={imageUrl}
                   alt={`${flavor} Vape Can`}
                   fill
-                  className="object-cover rounded-2xl"
+                  className="object-contain rounded-2xl"
                   priority={index === 0}
                   onError={() => setImageError(true)}
                 />
