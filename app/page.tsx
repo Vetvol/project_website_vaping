@@ -89,8 +89,8 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Jar Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Jar Products Grid - Single Column */}
+          <div className="space-y-20">
             {products.map((product, index) => (
               <motion.div
                 key={index}
@@ -98,46 +98,48 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="jar-product-container"
+                className="jar-product-container flex justify-center"
               >
                 {/* Jar */}
-                <div className="jar-card relative bg-gradient-to-br from-emerald-800 via-emerald-900 to-black rounded-2xl p-6 shadow-2xl overflow-hidden h-80">
+                <div className="jar-card relative bg-gradient-to-br from-emerald-800 via-emerald-900 to-black rounded-2xl p-8 shadow-2xl overflow-hidden w-80 h-96">
                   {/* Jar Background Pattern */}
                   <div className="absolute inset-0 opacity-20">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.1)_1px,transparent_0)] bg-[length:20px_20px]"></div>
                   </div>
 
                   {/* Brand Logo */}
-                  <div className="text-center mb-4">
-                    <div className="w-12 h-12 mx-auto mb-3 bg-emerald-600 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">S</span>
+                  <div className="text-center mb-6">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-2xl">S</span>
                     </div>
-                    <h3 className="text-white text-lg font-bold mb-1">{product.series}</h3>
-                    <div className="w-16 h-0.5 bg-emerald-400 mx-auto"></div>
+                    <h3 className="text-white text-xl font-bold mb-2">{product.series}</h3>
+                    <div className="w-20 h-1 bg-emerald-400 mx-auto"></div>
                   </div>
 
                   {/* Product Name */}
-                  <div className="text-center mb-4">
-                    <h4 className="text-white text-xl font-bold mb-2">
+                  <div className="text-center mb-6">
+                    <h4 className="text-white text-2xl font-bold mb-3">
                       {product.name.split(' ')[0]}
                     </h4>
                     <p className="text-emerald-200 text-sm">SALT • 10ml / 20mg/ml</p>
                   </div>
 
                   {/* Jar Bottom - Where flavors will fly out */}
-                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-emerald-700 rounded-b-2xl overflow-hidden">
-                    <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-emerald-800 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-emerald-700 rounded-b-2xl overflow-hidden">
+                    <div className="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-t from-emerald-800 to-transparent"></div>
                   </div>
 
                   {/* Flying Flavors */}
-                  <div className="flying-flavors absolute bottom-16 left-0 right-0">
+                  <div className="flying-flavors absolute bottom-20 left-0 right-0 h-20">
                     {product.flavors.map((flavor, flavorIndex) => (
                       <div
                         key={flavorIndex}
-                        className={`flavor-item flavor-${flavorIndex} absolute bg-emerald-600 text-white px-3 py-2 rounded-lg text-sm font-semibold shadow-lg`}
+                        className={`flavor-item flavor-${flavorIndex} absolute bg-emerald-600 text-white px-4 py-3 rounded-lg text-sm font-semibold shadow-lg`}
                         style={{
-                          left: `${20 + flavorIndex * 30}%`,
-                          bottom: '0px'
+                          left: `${15 + flavorIndex * 25}%`,
+                          bottom: '0px',
+                          transform: 'translateY(100px)',
+                          opacity: '0'
                         }}
                       >
                         {flavor}
@@ -147,7 +149,7 @@ export default function Home() {
                 </div>
 
                 {/* Warning Label */}
-                <div className="mt-4 bg-white border-2 border-gray-300 rounded-lg p-3 text-center">
+                <div className="mt-6 bg-white border-2 border-gray-300 rounded-lg p-4 text-center max-w-md mx-auto">
                   <p className="text-black text-xs font-semibold">
                     Product contains nicotine, which causes rapid addiction.
                   </p>
