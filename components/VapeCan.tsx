@@ -20,6 +20,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
   
   const [isOpen, setIsOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [imageError, setImageError] = useState(false)
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -127,7 +128,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
           {/* Can Container */}
           <div className="relative">
             {/* Can Body */}
-            {imageUrl ? (
+            {imageUrl && !imageError ? (
               <div className="w-24 h-60 sm:w-28 sm:h-72 md:w-32 md:h-80 rounded-2xl shadow-2xl relative overflow-hidden">
                 <Image
                   src={imageUrl}
@@ -135,6 +136,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
                   fill
                   className="object-cover rounded-2xl"
                   priority={index === 0}
+                  onError={() => setImageError(true)}
                 />
               </div>
             ) : (
