@@ -365,116 +365,38 @@ export default function VapeCanShowcase() {
               viewport={{ once: true }}
               className="ml-16 text-white max-w-md w-1/2"
             >
-              {/* Mobile/Tablet Description Box */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="lg:hidden mb-6"
-              >
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 shadow-lg">
-                  <div className="flex items-center gap-4">
-                    {/* Left Side - Page Number and Image */}
-                    <div className="flex flex-col items-center">
-                      {/* Product Image */}
-                      <div className="w-16 h-20 rounded-lg overflow-hidden shadow-lg">
-                        {product.image_url ? (
-                          <Image
-                            src={product.image_url}
-                            alt={`${product.flavor} Vape Can`}
-                            width={100}
-                            height={120}
-                            className="w-full h-full object-contain"
-                          />
-                        ) : (
-                          <div className="w-full h-full bg-gradient-to-b from-slate-300 via-slate-200 to-slate-300 rounded-lg flex items-center justify-center">
-                            <span className="text-slate-600 text-xs font-bold">LUNIQ</span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
+              {/* Product Title */}
+              <h1 className="text-5xl font-bold mb-4 gradient-text">
+                {product.flavor}
+              </h1>
 
-                    {/* Right Side - Content */}
-                    <div className="flex-1">
-                      {/* Product Specs */}
-                      <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 mb-3 shadow-lg inline-block">
-                        <div className="text-xs font-semibold text-white">
-                          10ml / 20mg/ml
-                        </div>
-                      </div>
+              {/* Product Description */}
+              <p className="text-xl text-white/80 mb-6 leading-relaxed">
+                {product.description}
+              </p>
+              
+              {/* Flavor Tags */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                {product.ingredients.map((ingredient, idx) => (
+                  <motion.span
+                    key={idx}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
+                    viewport={{ once: true }}
+                    className="px-3 py-1 bg-white/20 rounded-full text-sm font-medium"
+                  >
+                    {ingredient}
+                  </motion.span>
+                ))}
+              </div>
 
-                      {/* Product Title */}
-                      <h2 className="text-base font-bold text-white mb-2 leading-tight">
-                        {product.flavor}
-                      </h2>
-
-                      {/* Product Description */}
-                      <p className="text-xs text-gray-300 leading-relaxed mb-3">
-                        {product.description}
-                      </p>
-                      
-                      {/* Flavor Tags */}
-                      <div className="flex flex-wrap gap-1">
-                        {product.ingredients.map((ingredient, idx) => (
-                          <motion.span
-                            key={idx}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
-                            viewport={{ once: true }}
-                            className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-2 py-1 text-sm shadow-lg"
-                          >
-                            {ingredient}
-                          </motion.span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+              {/* Product Specs */}
+              <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl px-6 py-4 shadow-lg">
+                <div className="text-xl font-semibold text-white text-center">
+                  10ml / 20mg/ml
                 </div>
-              </motion.div>
-
-              {/* Desktop Product Info */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="hidden lg:block"
-              >
-                {/* Product Title */}
-                <h1 className="text-5xl font-bold mb-4 gradient-text">
-                  {product.flavor}
-                </h1>
-
-                {/* Product Description */}
-                <p className="text-xl text-white/80 mb-6 leading-relaxed">
-                  {product.description}
-                </p>
-                
-                {/* Flavor Tags */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {product.ingredients.map((ingredient, idx) => (
-                    <motion.span
-                      key={idx}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
-                      viewport={{ once: true }}
-                      className="px-3 py-1 bg-white/20 rounded-full text-sm font-medium"
-                    >
-                      {ingredient}
-                    </motion.span>
-                  ))}
-                </div>
-
-                {/* Product Specs */}
-                <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl px-6 py-4 shadow-lg">
-                  <div className="text-xl font-semibold text-white text-center">
-                    10ml / 20mg/ml
-                  </div>
-                </div>
-              </motion.div>
+              </div>
             </motion.div>
           </div>
 
