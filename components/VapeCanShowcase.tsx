@@ -39,6 +39,7 @@ export default function VapeCanShowcase() {
               description: "A tropical explosion of sweet kiwi and exotic guava, perfectly balanced with a refreshing citrus twist.",
               background_color: "#3b82f6",
               is_active: true,
+              image_url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=500&fit=crop&crop=center",
               created_at: "2024-01-01T00:00:00Z",
               updated_at: "2024-01-01T00:00:00Z"
             },
@@ -106,6 +107,7 @@ export default function VapeCanShowcase() {
             description: "A tropical explosion of sweet kiwi and exotic guava, perfectly balanced with a refreshing citrus twist.",
             background_color: "#3b82f6",
             is_active: true,
+            image_url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=500&fit=crop&crop=center",
             created_at: "2024-01-01T00:00:00Z",
             updated_at: "2024-01-01T00:00:00Z"
           },
@@ -309,6 +311,7 @@ export default function VapeCanShowcase() {
                   description={product.description}
                   index={index}
                   totalProducts={products.length}
+                  imageUrl={product.image_url}
                 />
               </motion.div>
             </div>

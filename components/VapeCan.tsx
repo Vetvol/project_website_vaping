@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 interface VapeCanProps {
   flavor: string
@@ -9,9 +10,10 @@ interface VapeCanProps {
   description: string
   index: number
   totalProducts: number
+  imageUrl?: string
 }
 
-export default function VapeCan({ flavor, ingredients, description, index, totalProducts }: VapeCanProps) {
+export default function VapeCan({ flavor, ingredients, description, index, totalProducts, imageUrl }: VapeCanProps) {
   const ref = useRef<HTMLDivElement>(null)
   const canRef = useRef<HTMLDivElement>(null)
   const ingredientsRef = useRef<HTMLDivElement>(null)
@@ -125,7 +127,18 @@ export default function VapeCan({ flavor, ingredients, description, index, total
           {/* Can Container */}
           <div className="relative">
             {/* Can Body */}
-            <div className="w-24 h-60 sm:w-28 sm:h-72 md:w-32 md:h-80 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-200 rounded-2xl shadow-2xl relative overflow-hidden">
+            {imageUrl ? (
+              <div className="w-24 h-60 sm:w-28 sm:h-72 md:w-32 md:h-80 rounded-2xl shadow-2xl relative overflow-hidden">
+                <Image
+                  src={imageUrl}
+                  alt={`${flavor} Vape Can`}
+                  fill
+                  className="object-cover rounded-2xl"
+                  priority={index === 0}
+                />
+              </div>
+            ) : (
+              <div className="w-24 h-60 sm:w-28 sm:h-72 md:w-32 md:h-80 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-200 rounded-2xl shadow-2xl relative overflow-hidden">
               {/* Can Top */}
               <div className="absolute top-0 left-0 right-0 h-6 sm:h-8 bg-gradient-to-b from-slate-300 to-slate-200 rounded-t-2xl">
                 <div className="absolute top-1.5 sm:top-2 left-1/2 transform -translate-x-1/2 w-4 h-3 sm:w-6 sm:h-4 bg-slate-400 rounded-sm"></div>
@@ -177,6 +190,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
                 <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-6 h-4 bg-slate-400 rounded-sm"></div>
               </motion.div>
             </div>
+            )}
 
             {/* Flying Ingredients */}
             <div ref={ingredientsRef} className="absolute inset-0 pointer-events-none">
