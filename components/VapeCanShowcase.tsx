@@ -39,7 +39,7 @@ export default function VapeCanShowcase() {
               description: "A tropical explosion of sweet kiwi and exotic guava, perfectly balanced with a refreshing citrus twist.",
               background_color: "#3b82f6",
               is_active: true,
-              image_url: "https://raw.githubusercontent.com/Vetvol/project_website_vaping/main/images/kivi_image.png",
+              image_url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=600&fit=crop&crop=center",
               created_at: "2024-01-01T00:00:00Z",
               updated_at: "2024-01-01T00:00:00Z"
             },
