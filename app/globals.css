@@ -49,7 +49,7 @@
   }
 
   .jar-card:hover {
-    @apply scale-105 shadow-3xl;
+    @apply scale-105 shadow-2xl;
   }
 
   .flying-flavors {
