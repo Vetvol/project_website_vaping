@@ -132,7 +132,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
       {/* Main Content */}
       <div className="flex flex-col sm:flex-row lg:flex-col items-center justify-center w-full max-w-6xl lg:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-0 lg:h-screen gap-4 sm:gap-6 lg:gap-0 relative z-10">
         {/* Photo Box - Full width on laptop */}
-        <div className="w-full sm:w-1/3 lg:w-full flex items-center justify-center order-2 sm:order-1 lg:order-1 lg:h-1/2">
+        <div className="w-full sm:w-1/3 lg:w-full flex items-center justify-center order-2 sm:order-1 lg:order-1 lg:h-1/2 lg:justify-center">
           <motion.div
             ref={canRef}
             style={{
@@ -243,7 +243,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
         </div>
 
         {/* Text Box - Full width on laptop */}
-        <div className="w-full sm:w-2/3 lg:w-full flex items-center justify-center order-1 sm:order-2 lg:order-2 lg:h-1/2">
+        <div className="w-full sm:w-2/3 lg:w-full flex items-center justify-center order-1 sm:order-2 lg:order-2 lg:h-1/2 lg:justify-center">
           {/* Mobile/Tablet Product Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
