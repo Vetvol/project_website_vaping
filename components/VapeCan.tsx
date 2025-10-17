@@ -221,36 +221,15 @@ export default function VapeCan({ flavor, ingredients, description, index, total
               ))}
             </div>
           </div>
-
-          {/* Mobile/Tablet Specifications - Visible only on mobile/tablet */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="lg:hidden mt-6 text-center"
-          >
-            {/* Product Title */}
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3 gradient-text">
-              {flavor}
-            </h2>
-            
-            {/* Product Specs */}
-            <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl px-4 py-3 shadow-lg max-w-xs mx-auto">
-              <div className="text-lg font-semibold text-white text-center">
-                10ml / 20mg/ml
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
 
-        {/* Product Info - Hidden on mobile/tablet, visible on desktop */}
+        {/* Product Info */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="hidden lg:block w-full lg:w-1/2 text-white text-center lg:text-left order-1 lg:order-2"
+          className="w-full lg:w-1/2 text-white text-center lg:text-left order-1 lg:order-2"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 gradient-text">
             {flavor}
