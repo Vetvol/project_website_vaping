@@ -114,7 +114,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 gap-8 lg:gap-16">
+      <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 gap-8 lg:gap-16">
         {/* Vape Can */}
         <motion.div
           ref={canRef}
@@ -228,7 +228,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            className="mt-6 text-center"
+            className="mt-6 text-center max-w-sm mx-auto"
           >
             {/* Product Title */}
             <h2 className="text-2xl sm:text-3xl font-bold mb-3 gradient-text">

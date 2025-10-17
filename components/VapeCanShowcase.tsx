@@ -332,13 +332,13 @@ export default function VapeCanShowcase() {
             ))}
           </div>
 
-          {/* Page Number Indicator */}
-          <div className="absolute top-8 left-8 text-white/50 text-sm font-mono z-20">
+          {/* Page Number Indicator - Hidden */}
+          <div className="hidden absolute top-8 left-8 text-white/50 text-sm font-mono z-20">
             {String(index + 1).padStart(2, '0')} / {String(products.length).padStart(2, '0')}
           </div>
 
           {/* Product Content */}
-          <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full gap-8 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 gap-8 lg:gap-16">
             {/* Vape Can */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
