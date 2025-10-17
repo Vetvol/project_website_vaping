@@ -235,7 +235,7 @@ export default function VapeCanShowcase() {
 
           {/* Product Content */}
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-12">
               {/* Product Info */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -253,12 +253,12 @@ export default function VapeCanShowcase() {
                   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold gradient-text mb-4 sm:mb-6">
                     {product.flavor}
                   </h2>
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 px-4 sm:px-0">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 mb-4 sm:mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0">
                     {product.description}
                   </p>
                   
                   {/* Flavor Tags */}
-                  <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start mb-6 sm:mb-8 px-4 sm:px-0">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start mb-4 sm:mb-6 lg:mb-8">
                     {product.ingredients.map((ingredient, idx) => (
                       <motion.span
                         key={idx}
