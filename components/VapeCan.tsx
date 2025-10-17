@@ -231,13 +231,6 @@ export default function VapeCan({ flavor, ingredients, description, index, total
               </span>
             ))}
           </div>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            Add to Cart
-          </motion.button>
         </motion.div>
       </div>
 

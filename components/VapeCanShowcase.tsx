@@ -1,54 +1,208 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import VapeCan from '@/components/VapeCan'
 
+interface Product {
+  id: number
+  flavor: string
+  description: string
+  ingredients: string[]
+  background_color: string
+  is_active: boolean
+  image_url?: string
+  created_at: string
+  updated_at: string
+}
+
 export default function VapeCanShowcase() {
-  const products = [
-    {
-      flavor: "Kiwi-Guava",
-      ingredients: ["🥝", "🍈", "🍋"],
-      description: "A tropical explosion of sweet kiwi and exotic guava, perfectly balanced with a refreshing citrus twist."
-    },
-    {
-      flavor: "Mango Tango",
-      ingredients: ["🥭", "🍊", "🌶️"],
-      description: "Juicy mango meets zesty orange with a hint of spice for an unforgettable tropical experience."
-    },
-    {
-      flavor: "Berry Blast",
-      ingredients: ["🫐", "🍓", "🍒"],
-      description: "A medley of fresh berries bursting with natural sweetness and antioxidant goodness."
-    },
-    {
-      flavor: "Citrus Splash",
-      ingredients: ["🍊", "🍋", "🍇"],
-      description: "Refreshing citrus blend with grape undertones for a crisp, energizing vape experience."
-    },
-    {
-      flavor: "Tropical Paradise",
-      ingredients: ["🍍", "🥥", "🍌"],
-      description: "Escape to paradise with this exotic blend of pineapple, coconut, and banana."
-    },
-    {
-      flavor: "Apple Cinnamon",
-      ingredients: ["🍎", "🍯", "🌿"],
-      description: "Warm apple pie meets aromatic cinnamon for a cozy, comforting flavor profile."
+  const [products, setProducts] = useState<Product[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/api/products')
+        const result = await response.json()
+        
+        if (result.success) {
+          setProducts(result.data)
+        } else {
+          // Fallback to mock data if API fails
+          setProducts([
+            {
+              id: 1,
+              flavor: "Kiwi-Guava",
+              ingredients: ["🥝", "🍈", "🍋"],
+              description: "A tropical explosion of sweet kiwi and exotic guava, perfectly balanced with a refreshing citrus twist.",
+              background_color: "#3b82f6",
+              is_active: true,
+              created_at: "2024-01-01T00:00:00Z",
+              updated_at: "2024-01-01T00:00:00Z"
+            },
+            {
+              id: 2,
+              flavor: "Mango Tango",
+              ingredients: ["🥭", "🍊", "🌶️"],
+              description: "Juicy mango meets zesty orange with a hint of spice for an unforgettable tropical experience.",
+              background_color: "#f59e0b",
+              is_active: true,
+              created_at: "2024-01-01T00:00:00Z",
+              updated_at: "2024-01-01T00:00:00Z"
+            },
+            {
+              id: 3,
+              flavor: "Berry Blast",
+              ingredients: ["🫐", "🍓", "🍒"],
+              description: "A medley of fresh berries bursting with natural sweetness and antioxidant goodness.",
+              background_color: "#8b5cf6",
+              is_active: true,
+              created_at: "2024-01-01T00:00:00Z",
+              updated_at: "2024-01-01T00:00:00Z"
+            },
+            {
+              id: 4,
+              flavor: "Citrus Splash",
+              ingredients: ["🍊", "🍋", "🍇"],
+              description: "Refreshing citrus blend with grape undertones for a crisp, energizing vape experience.",
+              background_color: "#10b981",
+              is_active: true,
+              created_at: "2024-01-01T00:00:00Z",
+              updated_at: "2024-01-01T00:00:00Z"
+            },
+            {
+              id: 5,
+              flavor: "Tropical Paradise",
+              ingredients: ["🍍", "🥥", "🍌"],
+              description: "Escape to paradise with this exotic blend of pineapple, coconut, and banana.",
+              background_color: "#f97316",
+              is_active: true,
+              created_at: "2024-01-01T00:00:00Z",
+              updated_at: "2024-01-01T00:00:00Z"
+            },
+            {
+              id: 6,
+              flavor: "Apple Cinnamon",
+              ingredients: ["🍎", "🍯", "🌿"],
+              description: "Warm apple pie meets aromatic cinnamon for a cozy, comforting flavor profile.",
+              background_color: "#dc2626",
+              is_active: true,
+              created_at: "2024-01-01T00:00:00Z",
+              updated_at: "2024-01-01T00:00:00Z"
+            }
+          ])
+        }
+      } catch (err) {
+        console.error('Error fetching products:', err)
+        setError('Failed to load products')
+        // Use fallback data
+        setProducts([
+          {
+            id: 1,
+            flavor: "Kiwi-Guava",
+            ingredients: ["🥝", "🍈", "🍋"],
+            description: "A tropical explosion of sweet kiwi and exotic guava, perfectly balanced with a refreshing citrus twist.",
+            background_color: "#3b82f6",
+            is_active: true,
+            created_at: "2024-01-01T00:00:00Z",
+            updated_at: "2024-01-01T00:00:00Z"
+          },
+          {
+            id: 2,
+            flavor: "Mango Tango",
+            ingredients: ["🥭", "🍊", "🌶️"],
+            description: "Juicy mango meets zesty orange with a hint of spice for an unforgettable tropical experience.",
+            background_color: "#f59e0b",
+            is_active: true,
+            created_at: "2024-01-01T00:00:00Z",
+            updated_at: "2024-01-01T00:00:00Z"
+          },
+          {
+            id: 3,
+            flavor: "Berry Blast",
+            ingredients: ["🫐", "🍓", "🍒"],
+            description: "A medley of fresh berries bursting with natural sweetness and antioxidant goodness.",
+            background_color: "#8b5cf6",
+            is_active: true,
+            created_at: "2024-01-01T00:00:00Z",
+            updated_at: "2024-01-01T00:00:00Z"
+          },
+          {
+            id: 4,
+            flavor: "Citrus Splash",
+            ingredients: ["🍊", "🍋", "🍇"],
+            description: "Refreshing citrus blend with grape undertones for a crisp, energizing vape experience.",
+            background_color: "#10b981",
+            is_active: true,
+            created_at: "2024-01-01T00:00:00Z",
+            updated_at: "2024-01-01T00:00:00Z"
+          },
+          {
+            id: 5,
+            flavor: "Tropical Paradise",
+            ingredients: ["🍍", "🥥", "🍌"],
+            description: "Escape to paradise with this exotic blend of pineapple, coconut, and banana.",
+            background_color: "#f97316",
+            is_active: true,
+            created_at: "2024-01-01T00:00:00Z",
+            updated_at: "2024-01-01T00:00:00Z"
+          },
+          {
+            id: 6,
+            flavor: "Apple Cinnamon",
+            ingredients: ["🍎", "🍯", "🌿"],
+            description: "Warm apple pie meets aromatic cinnamon for a cozy, comforting flavor profile.",
+            background_color: "#dc2626",
+            is_active: true,
+            created_at: "2024-01-01T00:00:00Z",
+            updated_at: "2024-01-01T00:00:00Z"
+          }
+        ])
+      } finally {
+        setLoading(false)
+      }
     }
-  ]
+
+    fetchProducts()
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+          className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full"
+        />
+      </div>
+    )
+  }
+
+  if (error && products.length === 0) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-white mb-4">Unable to load products</h2>
+          <p className="text-gray-400">{error}</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-black">
       {/* Product Showcase Sections */}
       {products.map((product, index) => (
         <section 
-          key={index}
+          key={product.id}
           className="h-screen w-full flex items-center justify-center relative overflow-hidden"
           style={{
             background: `linear-gradient(135deg, 
-              hsl(${200 + index * 30}, 70%, 10%) 0%, 
-              hsl(${220 + index * 20}, 60%, 15%) 50%, 
-              hsl(${240 + index * 10}, 50%, 8%) 100%)`
+              ${product.background_color}20 0%, 
+              ${product.background_color}40 50%, 
+              ${product.background_color}10 100%)`
           }}
         >
           {/* Background Elements */}
