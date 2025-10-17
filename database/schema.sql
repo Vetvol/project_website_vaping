@@ -1,4 +1,4 @@
-# Database Schema for Neon PostgreSQL
+-- Database Schema for Neon PostgreSQL
 
 -- Products table
 CREATE TABLE IF NOT EXISTS products (
