@@ -275,23 +275,16 @@ export default function VapeCanShowcase() {
                     ))}
                   </div>
 
-                  {/* Product Specs */}
+                  {/* Product Specs - Minimal */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                     viewport={{ once: true }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-md p-0 sm:p-0.5 md:p-1 lg:p-2 xl:p-4 max-w-[180px] sm:max-w-[200px] md:max-w-xs lg:max-w-sm mx-auto lg:mx-0"
+                    className="text-center"
                   >
-                    <div className="grid grid-cols-2 gap-1 sm:gap-2 md:gap-3 lg:gap-4 text-center">
-                      <div>
-                        <div className="text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-lg font-bold text-white">10ml</div>
-                        <div className="text-[6px] sm:text-[8px] md:text-xs text-gray-400">Volume</div>
-                      </div>
-                      <div>
-                        <div className="text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-lg font-bold text-white">20mg/ml</div>
-                        <div className="text-[6px] sm:text-[8px] md:text-xs text-gray-400">Nicotine</div>
-                      </div>
+                    <div className="text-[8px] sm:text-xs md:text-sm lg:text-base text-gray-300">
+                      10ml / 20mg/ml
                     </div>
                   </motion.div>
                 </motion.div>
