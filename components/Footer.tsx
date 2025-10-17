@@ -18,8 +18,8 @@ export default function Footer() {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <h3 className="text-2xl font-bold gradient-text mb-4">LUNIQ VAPE</h3>
-            <p className="text-gray-300 mb-6 max-w-md">
+            <h3 className="text-xl sm:text-2xl font-bold gradient-text mb-4">LUNIQ VAPE</h3>
+            <p className="text-gray-300 mb-6 max-w-md text-sm sm:text-base">
               Discover Luniq Vape and enter the world of intense sensations. Our premium vape products are distinguished by the highest quality and carefully selected flavors.
             </p>
             <div className="flex space-x-4">

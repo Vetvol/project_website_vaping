@@ -235,14 +235,14 @@ export default function VapeCanShowcase() {
 
           {/* Product Content */}
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
               {/* Product Info */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="flex-1 text-center lg:text-left"
+                className="flex-1 text-center lg:text-left order-2 lg:order-1"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -250,15 +250,15 @@ export default function VapeCanShowcase() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold gradient-text mb-6">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold gradient-text mb-4 sm:mb-6">
                     {product.flavor}
                   </h2>
-                  <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-2xl">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 px-4 sm:px-0">
                     {product.description}
                   </p>
                   
                   {/* Flavor Tags */}
-                  <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start mb-6 sm:mb-8 px-4 sm:px-0">
                     {product.ingredients.map((ingredient, idx) => (
                       <motion.span
                         key={idx}
@@ -266,7 +266,7 @@ export default function VapeCanShowcase() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-lg"
+                        className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-lg"
                       >
                         {ingredient}
                       </motion.span>
@@ -279,16 +279,16 @@ export default function VapeCanShowcase() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                     viewport={{ once: true }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 max-w-md mx-auto lg:mx-0"
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 max-w-sm mx-auto lg:mx-0"
                   >
-                    <div className="grid grid-cols-2 gap-4 text-center">
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4 text-center">
                       <div>
-                        <div className="text-2xl font-bold text-white">10ml</div>
-                        <div className="text-sm text-gray-400">Volume</div>
+                        <div className="text-lg sm:text-xl lg:text-2xl font-bold text-white">10ml</div>
+                        <div className="text-xs sm:text-sm text-gray-400">Volume</div>
                       </div>
                       <div>
-                        <div className="text-2xl font-bold text-white">20mg/ml</div>
-                        <div className="text-sm text-gray-400">Nicotine</div>
+                        <div className="text-lg sm:text-xl lg:text-2xl font-bold text-white">20mg/ml</div>
+                        <div className="text-xs sm:text-sm text-gray-400">Nicotine</div>
                       </div>
                     </div>
                   </motion.div>
@@ -301,7 +301,7 @@ export default function VapeCanShowcase() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="flex-1 flex justify-center"
+                className="flex-1 flex justify-center order-1 lg:order-2"
               >
                 <VapeCan 
                   flavor={product.flavor}

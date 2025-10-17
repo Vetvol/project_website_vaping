@@ -26,7 +26,7 @@ export default function Header() {
           {/* Logo */}
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold gradient-text"
+            className="text-lg sm:text-xl md:text-2xl font-bold gradient-text"
           >
             LUNIQ VAPE
           </motion.div>

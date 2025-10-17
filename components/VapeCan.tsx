@@ -125,26 +125,26 @@ export default function VapeCan({ flavor, ingredients, description, index, total
           {/* Can Container */}
           <div className="relative">
             {/* Can Body */}
-            <div className="w-32 h-80 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-200 rounded-2xl shadow-2xl relative overflow-hidden">
+            <div className="w-24 h-60 sm:w-28 sm:h-72 md:w-32 md:h-80 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-200 rounded-2xl shadow-2xl relative overflow-hidden">
               {/* Can Top */}
-              <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-slate-300 to-slate-200 rounded-t-2xl">
-                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-6 h-4 bg-slate-400 rounded-sm"></div>
+              <div className="absolute top-0 left-0 right-0 h-6 sm:h-8 bg-gradient-to-b from-slate-300 to-slate-200 rounded-t-2xl">
+                <div className="absolute top-1.5 sm:top-2 left-1/2 transform -translate-x-1/2 w-4 h-3 sm:w-6 sm:h-4 bg-slate-400 rounded-sm"></div>
               </div>
 
               {/* Can Label Area */}
-              <div className="absolute top-8 left-2 right-2 bottom-16 bg-gradient-to-b from-white to-slate-50 rounded-xl shadow-inner">
+              <div className="absolute top-6 sm:top-8 left-1.5 sm:left-2 right-1.5 sm:right-2 bottom-12 sm:bottom-16 bg-gradient-to-b from-white to-slate-50 rounded-xl shadow-inner">
                 {/* Brand Logo */}
-                <div className="text-center pt-4 pb-2">
-                  <div className="w-8 h-8 mx-auto mb-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">L</span>
+                <div className="text-center pt-3 sm:pt-4 pb-1 sm:pb-2">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-1 sm:mb-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-xs sm:text-sm">L</span>
                   </div>
                   <h3 className="text-slate-800 text-xs font-bold">LUNIQ VAPE</h3>
                 </div>
 
                 {/* Flavor Name */}
-                <div className="text-center px-2">
-                  <h2 className="text-slate-900 text-lg font-bold mb-1">{flavor}</h2>
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-2"></div>
+                <div className="text-center px-1 sm:px-2">
+                  <h2 className="text-slate-900 text-sm sm:text-base md:text-lg font-bold mb-1">{flavor}</h2>
+                  <div className="w-8 sm:w-12 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-1 sm:mb-2"></div>
                   <p className="text-slate-600 text-xs">10ml / 20mg/ml</p>
                 </div>
 
@@ -155,8 +155,8 @@ export default function VapeCan({ flavor, ingredients, description, index, total
               </div>
 
               {/* Can Bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-slate-300 to-slate-200 rounded-b-2xl">
-                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-slate-400 rounded-full"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 bg-gradient-to-t from-slate-300 to-slate-200 rounded-b-2xl">
+                <div className="absolute bottom-1.5 sm:bottom-2 left-1/2 transform -translate-x-1/2 w-6 sm:w-8 h-0.5 sm:h-1 bg-slate-400 rounded-full"></div>
               </div>
 
               {/* Opening Animation - Lid */}
