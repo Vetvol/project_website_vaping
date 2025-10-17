@@ -75,7 +75,7 @@ CREATE TABLE order_items (
 
 -- Insert LUNIQ VAPE products
 INSERT INTO products (flavor, description, ingredients, background_color, is_active, image_url) VALUES
-('Kiwi-Guava', 'A tropical explosion of sweet kiwi and exotic guava, perfectly balanced with a refreshing citrus twist.', '["🥝", "🍈", "🍋"]', '#3b82f6', true, '/images/kivi.jpg'),
+('Kiwi-Guava', 'A tropical explosion of sweet kiwi and exotic guava, perfectly balanced with a refreshing citrus twist.', '["🥝", "🍈", "🍋"]', '#3b82f6', true, '/images/kiwi-guava-product.jpg'),
 ('Mango Tango', 'Juicy mango meets zesty orange with a hint of spice for an unforgettable tropical experience.', '["🥭", "🍊", "🌶️"]', '#f59e0b', true, NULL),
 ('Berry Blast', 'A medley of fresh berries bursting with natural sweetness and antioxidant goodness.', '["🫐", "🍓", "🍒"]', '#8b5cf6', true, NULL),
 ('Citrus Splash', 'Refreshing citrus blend with grape undertones for a crisp, energizing vape experience.', '["🍊", "🍋", "🍇"]', '#10b981', true, NULL),
