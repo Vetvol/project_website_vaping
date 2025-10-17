@@ -338,14 +338,14 @@ export default function VapeCanShowcase() {
           </div>
 
           {/* Product Content */}
-          <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 gap-8 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-6xl lg:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-0 lg:h-screen gap-8 lg:gap-16">
             {/* Vape Can */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative z-10 w-full lg:w-1/2 flex justify-center order-2 lg:order-1"
+              className="relative z-10 w-full sm:w-1/3 lg:w-1/2 flex justify-center order-2 lg:order-1"
             >
               <VapeCan 
                 flavor={product.flavor}

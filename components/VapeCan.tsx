@@ -114,7 +114,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 gap-8 lg:gap-16">
+      <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-6xl lg:max-w-none mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-0 lg:h-screen gap-8 lg:gap-16">
         {/* Vape Can */}
         <motion.div
           ref={canRef}
@@ -123,7 +123,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
             rotateY: canRotateY,
             opacity: canOpacity,
           }}
-          className="relative z-10 w-full lg:w-1/2 flex justify-center order-2 lg:order-1"
+          className="relative z-10 w-full sm:w-1/3 lg:w-1/2 flex justify-center order-2 lg:order-1"
         >
           {/* Can Container */}
           <div className="relative w-32 h-80 sm:w-36 sm:h-90 md:w-40 md:h-100 lg:w-44 lg:h-110 xl:w-48 xl:h-120">
@@ -228,46 +228,46 @@ export default function VapeCan({ flavor, ingredients, description, index, total
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            className="mt-6 text-center max-w-sm mx-auto"
+            className="mt-6 text-center max-w-sm mx-auto lg:hidden"
           >
             {/* Product Title */}
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3 gradient-text">
+            <h2 className="text-xl sm:text-2xl font-bold mb-2 gradient-text">
               {flavor}
             </h2>
             
             {/* Product Description */}
-            <p className="text-sm sm:text-base text-white/80 mb-4 leading-relaxed max-w-md mx-auto">
+            <p className="text-xs sm:text-sm text-white/80 mb-3 leading-relaxed">
               {description}
             </p>
             
             {/* Flavor Tags */}
-            <div className="flex flex-wrap gap-2 justify-center mb-4">
+            <div className="flex flex-wrap gap-1 justify-center mb-3">
               {ingredients.map((ingredient, idx) => (
                 <span
                   key={idx}
-                  className="px-2 py-1 bg-white/20 rounded-full text-xs sm:text-sm font-medium"
+                  className="px-2 py-1 bg-white/20 rounded-full text-xs font-medium"
                 >
                   {ingredient}
                 </span>
               ))}
             </div>
             
-            {/* Product Specs */}
-            <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl px-4 py-3 shadow-lg max-w-xs mx-auto">
-              <div className="text-base font-semibold text-white text-center">
+            {/* Product Specs - Smaller for mobile/tablet */}
+            <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 shadow-lg max-w-xs mx-auto">
+              <div className="text-sm font-semibold text-white text-center">
                 10ml / 20mg/ml
               </div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Product Info - Hidden */}
+        {/* Product Info - Desktop Version */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="hidden"
+          className="hidden lg:block w-full lg:w-1/2 text-white text-center lg:text-left order-1 lg:order-2"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 gradient-text">
             {flavor}
@@ -284,6 +284,12 @@ export default function VapeCan({ flavor, ingredients, description, index, total
                 {ingredient}
               </span>
             ))}
+          </div>
+          {/* Product Specs */}
+          <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl px-6 py-4 shadow-lg max-w-xs mx-auto lg:mx-0">
+            <div className="text-xl font-semibold text-white text-center">
+              10ml / 20mg/ml
+            </div>
           </div>
         </motion.div>
       </div>
