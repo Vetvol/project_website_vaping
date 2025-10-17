@@ -242,7 +242,7 @@ export default function VapeCanShowcase() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="flex-1 text-center lg:text-left order-2 lg:order-1"
+                className="flex-1 text-center lg:text-left order-1 lg:order-1"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -301,7 +301,7 @@ export default function VapeCanShowcase() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="flex-1 flex justify-center order-1 lg:order-2"
+                className="flex-1 flex justify-center order-2 lg:order-2"
               >
                 <VapeCan 
                   flavor={product.flavor}
