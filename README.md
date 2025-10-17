@@ -80,8 +80,9 @@ project_website_vaping/
 ├── components/            # React components
 │   ├── Header.tsx         # Navigation header
 │   ├── Hero.tsx           # Hero section
-│   ├── AnimatedECigarette.tsx # Animated vaping device
 │   ├── ProductSeries.tsx  # Product showcase
+│   ├── VapeCan.tsx        # Individual vape can component
+│   ├── VapeCanShowcase.tsx # Main product showcase
 │   └── Footer.tsx         # Footer
 ├── lib/                   # Utility functions
 │   └── db.ts             # Database connection

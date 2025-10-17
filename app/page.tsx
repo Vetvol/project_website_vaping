@@ -41,23 +41,23 @@ export default function Home() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold gradient-text mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold gradient-text mb-4 sm:mb-6">
               LUNIQ VAPE
             </h1>
-            <p className="text-2xl sm:text-3xl text-gray-300 mb-8 font-light">
+            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-6 sm:mb-8 font-light">
               Premium Vape Experience
             </p>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="text-lg text-gray-400 max-w-2xl mx-auto"
+              className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto px-4"
             >
               Discover our collection of premium vape cans with unique flavors. 
               Scroll down to see each can open with flying ingredients!

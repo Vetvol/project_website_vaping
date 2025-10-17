@@ -114,7 +114,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
       </div>
 
       {/* Main Content */}
-      <div className="flex items-center justify-center w-full max-w-6xl mx-auto px-8">
+      <div className="flex flex-col lg:flex-row items-center justify-center w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 gap-8 lg:gap-16">
         {/* Vape Can */}
         <motion.div
           ref={canRef}
@@ -123,10 +123,10 @@ export default function VapeCan({ flavor, ingredients, description, index, total
             rotateY: canRotateY,
             opacity: canOpacity,
           }}
-          className="relative z-10"
+          className="relative z-10 w-full lg:w-1/2 flex justify-center order-2 lg:order-1"
         >
           {/* Can Container */}
-          <div className="relative w-24 h-60 sm:w-28 sm:h-70 md:w-32 md:h-80 lg:w-36 lg:h-90 xl:w-40 xl:h-100 ml-4 sm:ml-6 md:ml-8 lg:ml-10 xl:ml-12">
+          <div className="relative w-32 h-80 sm:w-36 sm:h-90 md:w-40 md:h-100 lg:w-44 lg:h-110 xl:w-48 xl:h-120">
             {/* Can Body */}
             {imageUrl && !imageError ? (
               <div className="absolute inset-0 rounded-2xl shadow-2xl overflow-hidden">
@@ -229,19 +229,19 @@ export default function VapeCan({ flavor, ingredients, description, index, total
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="ml-16 text-white max-w-md"
+          className="w-full lg:w-1/2 text-white text-center lg:text-left order-1 lg:order-2"
         >
-          <h1 className="text-5xl font-bold mb-4 gradient-text">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 gradient-text">
             {flavor}
           </h1>
-          <p className="text-xl text-white/80 mb-6 leading-relaxed">
+          <p className="text-lg sm:text-xl lg:text-2xl text-white/80 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
             {description}
           </p>
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 justify-center lg:justify-start">
             {ingredients.map((ingredient, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1 bg-white/20 rounded-full text-sm font-medium"
+                className="px-3 py-1 sm:px-4 sm:py-2 bg-white/20 rounded-full text-sm sm:text-base font-medium"
               >
                 {ingredient}
               </span>

@@ -101,7 +101,7 @@ export default function ProductSeries() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12"
         >
           {series.map((seriesItem, index) => (
             <motion.button
@@ -109,7 +109,7 @@ export default function ProductSeries() {
               onClick={() => setActiveSeries(index)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              className={`px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base ${
                 activeSeries === index
                   ? 'bg-primary-600 text-white shadow-lg'
                   : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -128,17 +128,17 @@ export default function ProductSeries() {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-white mb-4">
+          <div className="text-center mb-6 sm:mb-8">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
               {series[activeSeries].name}
             </h3>
-            <p className="text-lg text-gray-300 max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto px-4">
               {series[activeSeries].description}
             </p>
           </div>
 
           {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {series[activeSeries].products.map((product, index) => (
               <motion.div
                 key={index}
@@ -147,12 +147,12 @@ export default function ProductSeries() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="card p-6 group"
+                className="card p-4 sm:p-6 group"
               >
-                <div className="h-32 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-lg mb-4 flex items-center justify-center">
+                <div className="h-24 sm:h-32 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-lg mb-3 sm:mb-4 flex items-center justify-center">
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 5 }}
-                    className="text-4xl"
+                    className="text-2xl sm:text-4xl"
                   >
                     {product.name.includes('STRAWBERRY') ? '🍓' :
                      product.name.includes('RASPBERRY') ? '🫐' :
@@ -165,10 +165,10 @@ export default function ProductSeries() {
                      '💨'}
                   </motion.div>
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-primary-400 transition-colors">
+                <h4 className="text-base sm:text-lg font-semibold text-white mb-2 group-hover:text-primary-400 transition-colors">
                   {product.name}
                 </h4>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-400 text-xs sm:text-sm">
                   {product.description}
                 </p>
               </motion.div>
