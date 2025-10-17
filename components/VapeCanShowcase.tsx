@@ -342,6 +342,41 @@ export default function VapeCanShowcase() {
                 viewport={{ once: true }}
                 className="w-full lg:w-1/2 text-center lg:text-left order-2 lg:order-1"
               >
+                {/* Mobile/Tablet Description Box */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="lg:hidden mb-6 sm:mb-8 md:mb-10"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">
+                      {product.flavor}
+                    </h2>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 sm:mb-5 leading-relaxed">
+                      {product.description}
+                    </p>
+                    
+                    {/* Flavor Tags */}
+                    <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
+                      {product.ingredients.map((ingredient, idx) => (
+                        <motion.span
+                          key={idx}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
+                          viewport={{ once: true }}
+                          className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-lg sm:text-xl md:text-2xl shadow-lg"
+                        >
+                          {ingredient}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Desktop Product Info */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}

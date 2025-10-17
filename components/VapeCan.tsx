@@ -126,7 +126,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
           className="relative z-10"
         >
           {/* Can Container */}
-          <div className="relative w-32 h-80 sm:w-36 sm:h-90 md:w-40 md:h-100 lg:w-44 lg:h-110 xl:w-48 xl:h-120 ml-8 sm:ml-10 md:ml-12 lg:ml-14 xl:ml-16">
+          <div className="relative w-24 h-60 sm:w-28 sm:h-70 md:w-32 md:h-80 lg:w-36 lg:h-90 xl:w-40 xl:h-100 ml-4 sm:ml-6 md:ml-8 lg:ml-10 xl:ml-12">
             {/* Can Body */}
             {imageUrl && !imageError ? (
               <div className="absolute inset-0 rounded-2xl shadow-2xl overflow-hidden">
