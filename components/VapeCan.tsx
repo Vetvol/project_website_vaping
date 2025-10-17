@@ -78,10 +78,22 @@ export default function VapeCan({ flavor, ingredients, description, index, total
       <div 
         className="absolute inset-0"
         style={{
-          background: `linear-gradient(135deg, 
-            hsl(${200 + index * 20}, 70%, 15%) 0%, 
-            hsl(${220 + index * 20}, 60%, 10%) 50%, 
-            hsl(${240 + index * 20}, 50%, 5%) 100%)`
+          background: `
+            linear-gradient(135deg, 
+              hsl(${200 + index * 20}, 70%, 20%) 0%, 
+              hsl(${220 + index * 20}, 60%, 15%) 20%, 
+              hsl(${240 + index * 20}, 50%, 10%) 40%, 
+              hsl(${200 + index * 20}, 65%, 18%) 60%, 
+              hsl(${220 + index * 20}, 55%, 12%) 80%, 
+              hsl(${240 + index * 20}, 45%, 8%) 100%),
+            linear-gradient(45deg, 
+              transparent 0%, 
+              hsl(${200 + index * 20}, 60%, 15%) 30%, 
+              hsl(${220 + index * 20}, 50%, 10%) 60%, 
+              transparent 100%),
+            radial-gradient(ellipse at top left, hsl(${200 + index * 20}, 70%, 18%) 0%, transparent 70%),
+            radial-gradient(ellipse at bottom right, hsl(${240 + index * 20}, 50%, 12%) 0%, transparent 70%),
+            radial-gradient(ellipse at center, hsl(${220 + index * 20}, 60%, 15%) 0%, transparent 80%)`
         }}
       />
       {/* Background Pattern */}
