@@ -251,6 +251,7 @@ export default function VapeCanShowcase() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
+                  className="hidden lg:block"
                 >
                   <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold gradient-text mb-0.5 sm:mb-1 md:mb-2 lg:mb-4">
                     {product.flavor}
