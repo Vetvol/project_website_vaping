@@ -242,28 +242,28 @@ export default function VapeCanShowcase() {
           key={product.id}
           className="min-h-screen lg:h-screen w-full flex items-center justify-center relative overflow-hidden"
         >
-          {/* Full Screen Gradient Background */}
+          {/* Full Screen Gradient Background - Semi-transparent */}
           <div 
             className="absolute inset-0"
             style={{
               background: `
                 linear-gradient(135deg, 
-                  ${product.background_color}20 0%, 
-                  ${product.background_color}40 15%, 
-                  ${product.background_color}60 30%, 
-                  ${product.background_color}45 45%, 
-                  ${product.background_color}30 60%, 
-                  ${product.background_color}50 75%, 
-                  ${product.background_color}25 100%),
+                  ${product.background_color}10 0%, 
+                  ${product.background_color}20 15%, 
+                  ${product.background_color}30 30%, 
+                  ${product.background_color}22 45%, 
+                  ${product.background_color}15 60%, 
+                  ${product.background_color}25 75%, 
+                  ${product.background_color}12 100%),
                 linear-gradient(45deg, 
                   transparent 0%, 
-                  ${product.background_color}15 25%, 
-                  ${product.background_color}35 50%, 
-                  ${product.background_color}20 75%, 
+                  ${product.background_color}08 25%, 
+                  ${product.background_color}18 50%, 
+                  ${product.background_color}10 75%, 
                   transparent 100%),
-                radial-gradient(ellipse at top left, ${product.background_color}30 0%, transparent 60%),
-                radial-gradient(ellipse at bottom right, ${product.background_color}25 0%, transparent 60%),
-                radial-gradient(ellipse at center, ${product.background_color}15 0%, transparent 70%)`
+                radial-gradient(ellipse at top left, ${product.background_color}15 0%, transparent 60%),
+                radial-gradient(ellipse at bottom right, ${product.background_color}12 0%, transparent 60%),
+                radial-gradient(ellipse at center, ${product.background_color}08 0%, transparent 70%)`
             }}
           />
           {/* Enhanced Gradient Transition to Next Product */}

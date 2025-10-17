@@ -74,26 +74,26 @@ export default function VapeCan({ flavor, ingredients, description, index, total
       ref={ref}
       className="h-screen w-full flex items-center justify-center relative overflow-hidden"
     >
-      {/* Full Screen Gradient Background */}
+      {/* Full Screen Gradient Background - Semi-transparent */}
       <div 
         className="absolute inset-0"
         style={{
           background: `
             linear-gradient(135deg, 
-              hsl(${200 + index * 20}, 70%, 20%) 0%, 
-              hsl(${220 + index * 20}, 60%, 15%) 20%, 
-              hsl(${240 + index * 20}, 50%, 10%) 40%, 
-              hsl(${200 + index * 20}, 65%, 18%) 60%, 
-              hsl(${220 + index * 20}, 55%, 12%) 80%, 
-              hsl(${240 + index * 20}, 45%, 8%) 100%),
+              hsla(${200 + index * 20}, 70%, 20%, 0.1) 0%, 
+              hsla(${220 + index * 20}, 60%, 15%, 0.15) 20%, 
+              hsla(${240 + index * 20}, 50%, 10%, 0.1) 40%, 
+              hsla(${200 + index * 20}, 65%, 18%, 0.12) 60%, 
+              hsla(${220 + index * 20}, 55%, 12%, 0.08) 80%, 
+              hsla(${240 + index * 20}, 45%, 8%, 0.06) 100%),
             linear-gradient(45deg, 
               transparent 0%, 
-              hsl(${200 + index * 20}, 60%, 15%) 30%, 
-              hsl(${220 + index * 20}, 50%, 10%) 60%, 
+              hsla(${200 + index * 20}, 60%, 15%, 0.08) 30%, 
+              hsla(${220 + index * 20}, 50%, 10%, 0.06) 60%, 
               transparent 100%),
-            radial-gradient(ellipse at top left, hsl(${200 + index * 20}, 70%, 18%) 0%, transparent 70%),
-            radial-gradient(ellipse at bottom right, hsl(${240 + index * 20}, 50%, 12%) 0%, transparent 70%),
-            radial-gradient(ellipse at center, hsl(${220 + index * 20}, 60%, 15%) 0%, transparent 80%)`
+            radial-gradient(ellipse at top left, hsla(${200 + index * 20}, 70%, 18%, 0.1) 0%, transparent 70%),
+            radial-gradient(ellipse at bottom right, hsla(${240 + index * 20}, 50%, 12%, 0.08) 0%, transparent 70%),
+            radial-gradient(ellipse at center, hsla(${220 + index * 20}, 60%, 15%, 0.08) 0%, transparent 80%)`
         }}
       />
       {/* Background Pattern */}
