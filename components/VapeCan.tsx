@@ -223,13 +223,13 @@ export default function VapeCan({ flavor, ingredients, description, index, total
           </div>
         </motion.div>
 
-        {/* Product Info */}
+        {/* Product Info - Hidden on mobile and laptop, visible on xl+ screens */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="w-full lg:w-1/2 text-white text-center lg:text-left order-1 lg:order-2"
+          className="hidden xl:block w-full lg:w-1/2 text-white text-center lg:text-left order-1 lg:order-2"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 gradient-text">
             {flavor}
