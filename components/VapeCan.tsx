@@ -143,7 +143,7 @@ export default function VapeCan({ flavor, ingredients, description, index, total
             className="relative z-10 flex justify-center"
           >
           {/* Can Container */}
-          <div className="relative w-32 h-80 sm:w-36 sm:h-90 md:w-40 md:h-100 lg:w-44 lg:h-110 xl:w-48 xl:h-120">
+          <div className="relative w-32 h-80 sm:w-36 sm:h-90 md:w-40 md:h-100 lg:w-56 lg:h-140 xl:w-64 xl:h-160">
             {/* Can Body */}
             {imageUrl && !imageError ? (
               <div className="absolute inset-0 rounded-2xl shadow-2xl overflow-hidden">
@@ -159,36 +159,36 @@ export default function VapeCan({ flavor, ingredients, description, index, total
             ) : (
               <div className="absolute inset-0 bg-gradient-to-b from-slate-300 via-slate-200 to-slate-300 rounded-2xl shadow-2xl overflow-hidden border border-slate-400/20">
               {/* Can Top */}
-              <div className="absolute top-0 left-0 right-0 h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 bg-gradient-to-b from-slate-400 via-slate-300 to-slate-200 rounded-t-2xl border-b border-slate-400/30">
-                <div className="absolute top-2 sm:top-2.5 md:top-3 lg:top-3.5 xl:top-4 left-1/2 transform -translate-x-1/2 w-6 h-4 sm:w-7 sm:h-5 md:w-8 md:h-6 lg:w-9 lg:h-7 xl:w-10 xl:h-8 bg-gradient-to-b from-slate-500 to-slate-400 rounded-sm shadow-inner"></div>
+              <div className="absolute top-0 left-0 right-0 h-8 sm:h-10 md:h-12 lg:h-16 xl:h-18 bg-gradient-to-b from-slate-400 via-slate-300 to-slate-200 rounded-t-2xl border-b border-slate-400/30">
+                <div className="absolute top-2 sm:top-2.5 md:top-3 lg:top-4 xl:top-4.5 left-1/2 transform -translate-x-1/2 w-6 h-4 sm:w-7 sm:h-5 md:w-8 md:h-6 lg:w-10 lg:h-8 xl:w-12 xl:h-10 bg-gradient-to-b from-slate-500 to-slate-400 rounded-sm shadow-inner"></div>
               </div>
 
               {/* Can Label Area */}
-              <div className="absolute top-8 sm:top-10 md:top-12 lg:top-14 xl:top-16 left-2 sm:left-2.5 md:left-3 lg:left-3.5 xl:left-4 right-2 sm:right-2.5 md:right-3 lg:right-3.5 xl:right-4 bottom-16 sm:bottom-18 md:bottom-20 lg:bottom-22 xl:bottom-24 bg-gradient-to-b from-white via-slate-50 to-slate-100 rounded-xl shadow-inner border border-slate-200/50">
+              <div className="absolute top-8 sm:top-10 md:top-12 lg:top-16 xl:top-18 left-2 sm:left-2.5 md:left-3 lg:left-4 xl:left-5 right-2 sm:right-2.5 md:right-3 lg:right-4 xl:right-5 bottom-16 sm:bottom-18 md:bottom-20 lg:bottom-24 xl:bottom-26 bg-gradient-to-b from-white via-slate-50 to-slate-100 rounded-xl shadow-inner border border-slate-200/50">
                 {/* Brand Logo */}
-                <div className="text-center pt-4 sm:pt-5 md:pt-6 lg:pt-7 xl:pt-8 pb-2 sm:pb-2.5 md:pb-3 lg:pb-3.5 xl:pb-4">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-11 lg:h-11 xl:w-12 xl:h-12 mx-auto mb-2 sm:mb-2.5 md:mb-3 lg:mb-3.5 xl:mb-4 bg-gradient-to-br from-blue-500 via-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg border border-purple-400/30">
-                    <span className="text-white font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl drop-shadow-sm">L</span>
+                <div className="text-center pt-4 sm:pt-5 md:pt-6 lg:pt-8 xl:pt-10 pb-2 sm:pb-2.5 md:pb-3 lg:pb-4 xl:pb-5">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-14 lg:h-14 xl:w-16 xl:h-16 mx-auto mb-2 sm:mb-2.5 md:mb-3 lg:mb-4 xl:mb-5 bg-gradient-to-br from-blue-500 via-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg border border-purple-400/30">
+                    <span className="text-white font-bold text-sm sm:text-base md:text-lg lg:text-2xl xl:text-3xl drop-shadow-sm">L</span>
                   </div>
                   <h3 className="text-slate-800 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold drop-shadow-sm">LUNIQ VAPE</h3>
                 </div>
 
                 {/* Flavor Name */}
-                <div className="text-center px-2 sm:px-2.5 md:px-3 lg:px-3.5 xl:px-4">
-                  <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold mb-2 sm:mb-2.5 md:mb-3 lg:mb-3.5 xl:mb-4 drop-shadow-sm">{flavor}</h2>
-                  <div className="w-12 sm:w-14 md:w-16 lg:w-18 xl:w-20 h-1 sm:h-1.5 md:h-2 lg:h-2.5 xl:h-3 bg-gradient-to-r from-blue-500 via-purple-500 to-purple-600 mx-auto mb-2 sm:mb-2.5 md:mb-3 lg:mb-3.5 xl:mb-4 shadow-sm"></div>
+                <div className="text-center px-2 sm:px-2.5 md:px-3 lg:px-4 xl:px-5">
+                  <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold mb-2 sm:mb-2.5 md:mb-3 lg:mb-4 xl:mb-5 drop-shadow-sm">{flavor}</h2>
+                  <div className="w-12 sm:w-14 md:w-16 lg:w-20 xl:w-24 h-1 sm:h-1.5 md:h-2 lg:h-2.5 xl:h-3 bg-gradient-to-r from-blue-500 via-purple-500 to-purple-600 mx-auto mb-2 sm:mb-2.5 md:mb-3 lg:mb-4 xl:mb-5 shadow-sm"></div>
                   <p className="text-slate-600 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl drop-shadow-sm">10ml / 20mg/ml</p>
                 </div>
 
                 {/* Flavor Description */}
-                <div className="px-4 sm:px-5 md:px-6 lg:px-7 xl:px-8 mt-4 sm:mt-5 md:mt-6 lg:mt-7 xl:mt-8">
+                <div className="px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 mt-4 sm:mt-5 md:mt-6 lg:mt-8 xl:mt-10">
                   <p className="text-slate-700 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed drop-shadow-sm">{description}</p>
                 </div>
               </div>
 
               {/* Can Bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-18 md:h-20 lg:h-22 xl:h-24 bg-gradient-to-t from-slate-400 via-slate-300 to-slate-200 rounded-b-2xl border-t border-slate-400/30">
-                <div className="absolute bottom-2 sm:bottom-2.5 md:bottom-3 lg:bottom-3.5 xl:bottom-4 left-1/2 transform -translate-x-1/2 w-8 sm:w-9 md:w-10 lg:w-11 xl:w-12 h-1 sm:h-1.5 md:h-2 lg:h-2.5 xl:h-3 bg-gradient-to-r from-slate-500 to-slate-400 rounded-full shadow-inner"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-18 md:h-20 lg:h-24 xl:h-26 bg-gradient-to-t from-slate-400 via-slate-300 to-slate-200 rounded-b-2xl border-t border-slate-400/30">
+                <div className="absolute bottom-2 sm:bottom-2.5 md:bottom-3 lg:bottom-4 xl:bottom-5 left-1/2 transform -translate-x-1/2 w-8 sm:w-9 md:w-10 lg:w-12 xl:w-14 h-1 sm:h-1.5 md:h-2 lg:h-2.5 xl:h-3 bg-gradient-to-r from-slate-500 to-slate-400 rounded-full shadow-inner"></div>
               </div>
 
               {/* Opening Animation - Lid */}
@@ -317,19 +317,6 @@ export default function VapeCan({ flavor, ingredients, description, index, total
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isInView ? 1 : 0 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="text-white/60 text-sm"
-        >
-          Scroll to discover
-        </motion.div>
-      </motion.div>
     </section>
   )
 }
