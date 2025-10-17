@@ -237,7 +237,7 @@ export default function VapeCanShowcase() {
 
           {/* Product Content */}
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-2 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-1 sm:gap-2 md:gap-4 lg:gap-6 xl:gap-8">
               {/* Product Info */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -252,15 +252,15 @@ export default function VapeCanShowcase() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold gradient-text mb-1 sm:mb-2 md:mb-4 lg:mb-6">
+                  <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold gradient-text mb-0.5 sm:mb-1 md:mb-2 lg:mb-4">
                     {product.flavor}
                   </h2>
-                  <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 mb-1 sm:mb-2 md:mb-4 lg:mb-6 max-w-2xl mx-auto lg:mx-0">
+                  <p className="text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg text-gray-300 mb-0.5 sm:mb-1 md:mb-2 lg:mb-4 max-w-2xl mx-auto lg:mx-0">
                     {product.description}
                   </p>
                   
                   {/* Flavor Tags */}
-                  <div className="flex flex-wrap gap-1 sm:gap-2 md:gap-3 justify-center lg:justify-start mb-1 sm:mb-2 md:mb-4 lg:mb-6">
+                  <div className="flex flex-wrap gap-0.5 sm:gap-1 md:gap-2 lg:gap-3 justify-center lg:justify-start mb-0.5 sm:mb-1 md:mb-2 lg:mb-4">
                     {product.ingredients.map((ingredient, idx) => (
                       <motion.span
                         key={idx}
@@ -268,7 +268,7 @@ export default function VapeCanShowcase() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-1 py-0.5 sm:px-2 sm:py-1 md:px-3 md:py-1 lg:px-4 lg:py-2 text-xs sm:text-sm md:text-lg"
+                        className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-0.5 py-0 sm:px-1 sm:py-0.5 md:px-2 md:py-1 lg:px-3 lg:py-1 xl:px-4 xl:py-2 text-[10px] sm:text-xs md:text-sm lg:text-lg"
                       >
                         {ingredient}
                       </motion.span>
@@ -281,16 +281,16 @@ export default function VapeCanShowcase() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                     viewport={{ once: true }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-0.5 sm:p-1 md:p-2 lg:p-4 xl:p-6 max-w-[200px] sm:max-w-xs md:max-w-sm mx-auto lg:mx-0"
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-md p-0 sm:p-0.5 md:p-1 lg:p-2 xl:p-4 max-w-[180px] sm:max-w-[200px] md:max-w-xs lg:max-w-sm mx-auto lg:mx-0"
                   >
                     <div className="grid grid-cols-2 gap-1 sm:gap-2 md:gap-3 lg:gap-4 text-center">
                       <div>
-                        <div className="text-[10px] sm:text-xs md:text-sm lg:text-lg xl:text-xl font-bold text-white">10ml</div>
-                        <div className="text-[8px] sm:text-xs text-gray-400">Volume</div>
+                        <div className="text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-lg font-bold text-white">10ml</div>
+                        <div className="text-[6px] sm:text-[8px] md:text-xs text-gray-400">Volume</div>
                       </div>
                       <div>
-                        <div className="text-[10px] sm:text-xs md:text-sm lg:text-lg xl:text-xl font-bold text-white">20mg/ml</div>
-                        <div className="text-[8px] sm:text-xs text-gray-400">Nicotine</div>
+                        <div className="text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-lg font-bold text-white">20mg/ml</div>
+                        <div className="text-[6px] sm:text-[8px] md:text-xs text-gray-400">Nicotine</div>
                       </div>
                     </div>
                   </motion.div>
