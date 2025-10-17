@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import VapeCan from '@/components/VapeCan'
+import Image from 'next/image'
 
 interface Product {
   id: number
@@ -350,28 +351,69 @@ export default function VapeCanShowcase() {
                   viewport={{ once: true }}
                   className="lg:hidden mb-6 sm:mb-8 md:mb-10"
                 >
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg">
-                    <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">
-                      {product.flavor}
-                    </h2>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-4 sm:mb-5 leading-relaxed">
-                      {product.description}
-                    </p>
-                    
-                    {/* Flavor Tags */}
-                    <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
-                      {product.ingredients.map((ingredient, idx) => (
-                        <motion.span
-                          key={idx}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
-                          viewport={{ once: true }}
-                          className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-lg sm:text-xl md:text-2xl shadow-lg"
-                        >
-                          {ingredient}
-                        </motion.span>
-                      ))}
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg relative">
+                    {/* Absolute positioned content */}
+                    <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                      {/* Left Side - Page Number and Picture */}
+                      <div className="absolute left-0 top-0 bottom-0 w-1/2 flex flex-col items-center justify-center p-4 sm:p-5 md:p-6">
+                        {/* Page Number */}
+                        <div className="text-white/80 text-sm sm:text-base md:text-lg font-semibold mb-3 sm:mb-4">
+                          {String(index + 1).padStart(2, '0')} / {String(products.length).padStart(2, '0')}
+                        </div>
+                        
+                        {/* Product Image */}
+                        <div className="w-16 h-20 sm:w-20 sm:h-24 md:w-24 md:h-28 rounded-lg overflow-hidden shadow-lg">
+                          {product.image_url ? (
+                            <Image
+                              src={product.image_url}
+                              alt={`${product.flavor} Vape Can`}
+                              width={100}
+                              height={120}
+                              className="w-full h-full object-contain"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-gradient-to-b from-slate-300 via-slate-200 to-slate-300 rounded-lg flex items-center justify-center">
+                              <span className="text-slate-600 text-xs font-bold">LUNIQ</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Right Side - Specs and Description */}
+                      <div className="absolute right-0 top-0 bottom-0 w-1/2 flex flex-col justify-center p-4 sm:p-5 md:p-6">
+                        {/* Product Specs */}
+                        <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 mb-3 sm:mb-4 shadow-lg">
+                          <div className="text-xs sm:text-sm md:text-base font-semibold text-white text-center">
+                            10ml / 20mg/ml
+                          </div>
+                        </div>
+
+                        {/* Product Title */}
+                        <h2 className="text-sm sm:text-base md:text-lg font-bold text-white mb-2 sm:mb-3 leading-tight">
+                          {product.flavor}
+                        </h2>
+
+                        {/* Product Description */}
+                        <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed mb-3 sm:mb-4">
+                          {product.description}
+                        </p>
+                        
+                        {/* Flavor Tags */}
+                        <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
+                          {product.ingredients.map((ingredient, idx) => (
+                            <motion.span
+                              key={idx}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              whileInView={{ opacity: 1, scale: 1 }}
+                              transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
+                              viewport={{ once: true }}
+                              className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-2 py-1 sm:px-3 sm:py-1.5 text-sm sm:text-base md:text-lg shadow-lg"
+                            >
+                              {ingredient}
+                            </motion.span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
