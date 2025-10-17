@@ -4,30 +4,53 @@ import sql from '@/lib/db'
 export async function GET() {
   try {
     const products = await sql`
-      SELECT * FROM products 
-      ORDER BY created_at DESC
+      SELECT 
+        id,
+        flavor,
+        description,
+        ingredients,
+        background_color,
+        is_active,
+        image_url,
+        created_at,
+        updated_at
+      FROM products 
+      WHERE is_active = true
+      ORDER BY id ASC
     `
-    return NextResponse.json(products)
+    return NextResponse.json({
+      success: true,
+      data: products
+    })
   } catch (error) {
     console.error('Error fetching products:', error)
-    return NextResponse.json({ error: 'Failed to fetch products' }, { status: 500 })
+    return NextResponse.json({ 
+      success: false,
+      error: 'Failed to fetch products' 
+    }, { status: 500 })
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, description, series, status, stock } = body
+    const { flavor, description, ingredients, background_color, is_active, image_url } = body
 
     const product = await sql`
-      INSERT INTO products (name, description, series, status, stock)
-      VALUES (${name}, ${description}, ${series}, ${status}, ${stock})
+      INSERT INTO products (flavor, description, ingredients, background_color, is_active, image_url)
+      VALUES (${flavor}, ${description}, ${JSON.stringify(ingredients)}, ${background_color}, ${is_active}, ${image_url})
       RETURNING *
     `
 
-    return NextResponse.json(product[0])
+    return NextResponse.json({
+      success: true,
+      data: product[0]
+    })
   } catch (error) {
     console.error('Error creating product:', error)
-    return NextResponse.json({ error: 'Failed to create product' }, { status: 500 })
+    return NextResponse.json({ 
+      success: false,
+      error: 'Failed to create product' 
+    }, { status: 500 })
   }
 }
