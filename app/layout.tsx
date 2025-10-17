@@ -14,9 +14,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Sic! Salts - Premium Vaping Experience',
-  description: 'Discover Sic! Salts and enter the world of intense sensations. Our nicotine salts are distinguished by the highest quality and carefully selected flavors.',
-  keywords: 'vaping, nicotine salts, e-cigarette, flavors, premium vaping',
+  title: 'LUNIQ VAPE - Premium Vaping Experience',
+  description: 'Discover LUNIQ VAPE and enter the world of intense sensations. Our premium vape products are distinguished by the highest quality and carefully selected flavors.',
+  keywords: 'vaping, premium vape, e-cigarette, flavors, LUNIQ VAPE, vape cans',
 }
 
 export default function RootLayout({
