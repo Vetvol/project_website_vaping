@@ -18,9 +18,9 @@ export default function Footer() {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <h3 className="text-2xl font-bold gradient-text mb-4">SIC! SALTS</h3>
+            <h3 className="text-2xl font-bold gradient-text mb-4">LUNIQ VAPE</h3>
             <p className="text-gray-300 mb-6 max-w-md">
-              Discover Sic! Salts and enter the world of intense sensations. Our nicotine salts are distinguished by the highest quality and carefully selected flavors.
+              Discover Luniq Vape and enter the world of intense sensations. Our premium vape products are distinguished by the highest quality and carefully selected flavors.
             </p>
             <div className="flex space-x-4">
               <motion.a
@@ -69,7 +69,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400">
                 <Mail size={16} />
-                <span>info@sicsalts.com</span>
+                <span>info@luniqvape.com</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone size={16} />
@@ -93,7 +93,7 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Sic! Salts. All rights reserved.
+              © {currentYear} Luniq Vape. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <motion.a

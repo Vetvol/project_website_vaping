@@ -28,7 +28,7 @@ export default function Header() {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold gradient-text"
           >
-            SIC! SALTS
+            LUNIQ VAPE
           </motion.div>
 
           {/* Desktop Navigation */}

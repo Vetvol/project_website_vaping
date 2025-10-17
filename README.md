@@ -1,16 +1,15 @@
-# SIC! SALTS - Premium Vaping Website
+# LUNIQ VAPE - Premium Vaping Website
 
-A modern, animated website for SIC! SALTS vaping products with an integrated admin panel for content management.
+A modern, animated website for LUNIQ VAPE vaping products with scroll-based product showcase.
 
 ## Features
 
 - 🎨 **Modern Design**: Beautiful gradient backgrounds and smooth animations
 - 📱 **Responsive**: Works perfectly on all devices
 - ⚡ **Fast Performance**: Built with Next.js 14 and optimized for speed
-- 🎭 **Animations**: Smooth scroll animations and interactive elements
-- 🚀 **Animated E-Cigarette**: Custom animated vaping device component
-- 👨‍💼 **Admin Panel**: Complete content management system
-- 🗄️ **Database Integration**: Neon PostgreSQL database support
+- 🎭 **Scroll Animations**: Interactive vape can showcase with flying ingredients
+- 🚀 **3D Effects**: Modern 3D animations and parallax effects
+- 🗄️ **Database Ready**: Neon PostgreSQL database support
 - 🌐 **Vercel Ready**: Optimized for Vercel deployment
 
 ## Tech Stack
@@ -67,7 +66,6 @@ A modern, animated website for SIC! SALTS vaping products with an integrated adm
 
 6. **Open your browser**
    - Main website: http://localhost:3000
-   - Admin panel: http://localhost:3000/admin
 
 ## Project Structure
 
@@ -94,24 +92,12 @@ project_website_vaping/
 
 ## Key Components
 
-### Animated E-Cigarette
-- Custom animated vaping device with floating particles
-- LED light effects and vapor animations
-- Interactive hover effects
-- Smooth floating animations
-
-### Product Series
-- Four main product lines: SIC! SALTS, DUPLEX, THEA, MOJITO
-- Interactive tab navigation
-- Product cards with hover animations
-- Responsive grid layout
-
-### Admin Panel
-- Dashboard with statistics
-- Product management
-- User management
-- Settings configuration
-- Real-time preview mode
+### Vape Can Showcase
+- Interactive scroll-based product display
+- Flying ingredient animations
+- 3D can opening effects
+- Smooth parallax scrolling
+- One product per full-screen section
 
 ## Deployment
 
@@ -184,7 +170,7 @@ This project is licensed under the MIT License.
 
 ## Support
 
-For support, email info@sicsalts.com or create an issue on GitHub.
+For support, email info@luniqvape.com or create an issue on GitHub.
 
 ---
 

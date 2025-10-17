@@ -136,9 +136,9 @@ export default function VapeCan({ flavor, ingredients, description, index, total
                 {/* Brand Logo */}
                 <div className="text-center pt-4 pb-2">
                   <div className="w-8 h-8 mx-auto mb-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">S</span>
+                    <span className="text-white font-bold text-sm">L</span>
                   </div>
-                  <h3 className="text-slate-800 text-xs font-bold">SIC! SALTS</h3>
+                  <h3 className="text-slate-800 text-xs font-bold">LUNIQ VAPE</h3>
                 </div>
 
                 {/* Flavor Name */}

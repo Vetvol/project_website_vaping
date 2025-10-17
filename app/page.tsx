@@ -48,7 +48,7 @@ export default function Home() {
             transition={{ duration: 1 }}
           >
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold gradient-text mb-6">
-              SIC! SALTS
+              LUNIQ VAPE
             </h1>
             <p className="text-2xl sm:text-3xl text-gray-300 mb-8 font-light">
               Premium Vape Experience
