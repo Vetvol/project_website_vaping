@@ -14,7 +14,7 @@ interface JarProductProps {
 export default function JarProduct({ name, description, series, flavor, index }: JarProductProps) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { 
-    threshold: 0.3,
+    amount: 0.3,
     margin: "-100px 0px -100px 0px"
   })
   
