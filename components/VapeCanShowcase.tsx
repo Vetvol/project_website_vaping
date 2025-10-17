@@ -281,16 +281,16 @@ export default function VapeCanShowcase() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                     viewport={{ once: true }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-1 sm:p-2 md:p-4 lg:p-6 max-w-xs sm:max-w-sm mx-auto lg:mx-0"
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-0.5 sm:p-1 md:p-2 lg:p-4 xl:p-6 max-w-[200px] sm:max-w-xs md:max-w-sm mx-auto lg:mx-0"
                   >
-                    <div className="grid grid-cols-2 gap-3 sm:gap-4 text-center">
+                    <div className="grid grid-cols-2 gap-1 sm:gap-2 md:gap-3 lg:gap-4 text-center">
                       <div>
-                        <div className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold text-white">10ml</div>
-                        <div className="text-xs text-gray-400">Volume</div>
+                        <div className="text-[10px] sm:text-xs md:text-sm lg:text-lg xl:text-xl font-bold text-white">10ml</div>
+                        <div className="text-[8px] sm:text-xs text-gray-400">Volume</div>
                       </div>
                       <div>
-                        <div className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold text-white">20mg/ml</div>
-                        <div className="text-xs text-gray-400">Nicotine</div>
+                        <div className="text-[10px] sm:text-xs md:text-sm lg:text-lg xl:text-xl font-bold text-white">20mg/ml</div>
+                        <div className="text-[8px] sm:text-xs text-gray-400">Nicotine</div>
                       </div>
                     </div>
                   </motion.div>
